@@ -14,7 +14,6 @@ timezone: Asia/Hong_Kong
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://wangboquan.coding.me/blog/
 root: /blog
-img_root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
