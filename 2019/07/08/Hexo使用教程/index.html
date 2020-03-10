@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Hexo使用教程 | 汪博全的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="已完结">
+<meta name="keywords" content="Hexo,已完结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo使用教程">
+<meta property="og:url" content="https://wangbq96.github.io/2019/07/08/Hexo使用教程/index.html">
+<meta property="og:site_name" content="汪博全的博客">
+<meta property="og:description" content="已完结">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-17T06:17:18.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo使用教程">
+<meta name="twitter:description" content="已完结">
+  
+    <link rel="alternate" href="/atom.xml" title="汪博全的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">汪博全的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wangbq96.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hexo使用教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/08/Hexo使用教程/" class="article-date">
+  <time datetime="2019-07-08T08:33:50.000Z" itemprop="datePublished">2019-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo使用教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>已完结</p>
+</blockquote>
+<a id="more"></a>
+<p>换了新电脑需要把原来博客的源文件挪过来，趁此机会整理一下hexo安装过程和常用命令<br>由于之前的博客在图片上有些小问题，索性顺便解决了</p>
+<p>我的博客是部署在coding上的master分支，源文件存在另外一个分支，先clone下来</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1 安装"></a>1 安装</h2><h3 id="1-1-安装Hexo"><a href="#1-1-安装Hexo" class="headerlink" title="1.1 安装Hexo"></a>1.1 安装Hexo</h3><p>官网上已经给出了安装教程：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
+<p>由于我们已经有了一个blog所以就不用init了，执行hexo server后就可以看到我们的博客了</p>
+<h3 id="1-2-安装NexT"><a href="#1-2-安装NexT" class="headerlink" title="1.2 安装NexT"></a>1.2 安装NexT</h3><p>不知道为什么NexT主题没有备份到git上，所以要重新安装，访问NexT的仓库地址：<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NexT</a>，上面有安装教程</p>
+<p>注：有很多hexo的教程里的NexT仓库地址还是旧的，那个已经停止维护了</p>
+<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2 配置"></a>2 配置</h2><p>有两个地方需要配置，一个是站点配置文件，在博客的根目录<code>_config.yml</code>，另一个是主题配置文件，由于我们使用的是NexT主题，所以配置文件在<code>themes/next/_config.yml</code>，其他主题同理。以下只列举常用的配置，更详细的配置参考官方文档。</p>
+<h3 id="2-1-站点配置文件"><a href="#2-1-站点配置文件" class="headerlink" title="2.1 站点配置文件"></a>2.1 站点配置文件</h3><ul>
+<li>Site</li>
+</ul>
+<p>这部分配置博客的一些基本信息，例如标题作者，这里要注意的是语言的配置，hexo官方说中文要写<code>zh-HANS</code>，但是由于我使用的是NexT主题，而NexT主题中对应的语言文件叫<code>zh-CN.yml</code>，所以这里还是填<code>zh-CN</code></p>
+<ul>
+<li>URL</li>
+</ul>
+<p>配置博客的地址，主要填<code>url</code>和<code>root</code>，例如我的博客地址是<code>http://wangboquan.coding.me/blog/</code>，那么<code>url</code>就填这个，<code>root</code>填<code>/blog</code></p>
+<ul>
+<li>Writing</li>
+</ul>
+<p>这里要启用<code>post_asset_folder</code>，其他保持默认就行，用途下面会讲。</p>
+<ul>
+<li>theme</li>
+</ul>
+<p>使用什么主题就填哪个主题的名字，这里我填next</p>
+<ul>
+<li>deploy</li>
+</ul>
+<p>配置博客部署的位置，type一般都git，repo就填仓库地址，branch填master</p>
+<h3 id="2-2-主题配置文件"><a href="#2-2-主题配置文件" class="headerlink" title="2.2 主题配置文件"></a>2.2 主题配置文件</h3><p>其实这个保持默认也没关系，我就调了两个部分，一个是<code>scheme</code>，一个是<code>menu</code>。<code>scheme</code>可以指定NexT主题的风格，我比较喜欢Pisces，可以在侧边常驻菜单栏。<code>menu</code>可以调整菜单栏的内容。</p>
+<h2 id="3-写文章"><a href="#3-写文章" class="headerlink" title="3 写文章"></a>3 写文章</h2><p>运行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>然后就会在<code>source/_post</code>下生成对应title的<strong>md文件</strong>，由于启用了<code>post_asset_folder</code>，还会生成一个<strong>文件夹</strong>，文件夹是用来存放图片等静态文件的，在md里面写文章内容就行了。</p>
+<p>这里要说明的是，如果想在文章里插入图片，一种方法是使用图床，即把图片上传到图床生成链接，再在文章里插入这个链接。但是这样非常麻烦，除了维护博客之外还要维护图床，而且图片一多很难管理，我们更希望让图片和文章保存在一起。另一种方法是使用hexo-asset-image插件，可以让博客访问到上述文件夹中的内容。但是这个插件有一个问题，当博客是放在子文件夹下时（就像我的博客），无法生成正确的图片地址，访问就会出问题。</p>
+<p>但是在hexo3版本之后，官方实现了这个功能</p>
+<blockquote>
+<p>通过常规的 markdown 语法和相对路径来引用图片和其它资源可能会导致它们在存档页或者主页上显示 不正确。在Hexo 2时代，社区创建了很多插件来解决这个问题。但是，随着Hexo 3  的发布，许多新的标签插件被加入到了核心代码中。这使得你可以更简单地在文章中引用你的资源。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>比如说：当你打开文章资源文件夹功能后，你把一个 <code>example.jpg</code> 图片放在了你的资源文件夹中，如果通过使用相对路径的常规 markdown 语法 <code>![](/example.jpg)</code> ，它将不会出现在首页上。（但是它会在文章中按你期待的方式工作）正确的引用图片方式是使用下列的标签插件而不是 markdown ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>通过这种方式，图片将会同时出现在文章和主页以及归档页中。</p>
+</blockquote>
+<h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4 测试"></a>4 测试</h2><p>写好文章后，我们先生成静态文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<p>然后运行测试服务器，看网页是否显示正常<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<p>有的时候我们需要清空静态文件，就可以运行下面的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<h2 id="5-部署"><a href="#5-部署" class="headerlink" title="5 部署"></a>5 部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="6-草稿功能"><a href="#6-草稿功能" class="headerlink" title="6 草稿功能"></a>6 草稿功能</h2><h3 id="6-1-新建草稿"><a href="#6-1-新建草稿" class="headerlink" title="6.1 新建草稿"></a>6.1 新建草稿</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-预览草稿"><a href="#6-2-预览草稿" class="headerlink" title="6.2 预览草稿"></a>6.2 预览草稿</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo S --draft</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-草稿转正"><a href="#6-3-草稿转正" class="headerlink" title="6.3 草稿转正"></a>6.3 草稿转正</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="7-其他"><a href="#7-其他" class="headerlink" title="7 其他"></a>7 其他</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g = hexo generate</span><br><span class="line">hexo s = hexo server</span><br><span class="line">hexo d = hexo deploy</span><br></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/lsshlsw/article/details/50322465" target="_blank" rel="noopener">http://blog.csdn.net/lsshlsw/article/details/50322465</a><br><a href="https://segmentfault.com/q/1010000002561642" target="_blank" rel="noopener">https://segmentfault.com/q/1010000002561642</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wangbq96.github.io/2019/07/08/Hexo使用教程/" data-id="ck7m6rljv000azsuy77pfcs17" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/已完结/">已完结</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/17/Java-从入门到懵逼/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java常见问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/06/软件测试与维护/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">软件测试与维护</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/信息安全/">信息安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/树莓派/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/">计算机基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据结构与算法/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/计算机网络/">计算机网络</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件设计/">软件设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件配置/">软件配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/项目/">项目</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dokuwiki/">dokuwiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/已完结/">已完结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数字证书/">数字证书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连载中/">连载中</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/dokuwiki/" style="font-size: 10px;">dokuwiki</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/信息安全/" style="font-size: 13.33px;">信息安全</a> <a href="/tags/已完结/" style="font-size: 20px;">已完结</a> <a href="/tags/数字证书/" style="font-size: 13.33px;">数字证书</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/计算机网络/" style="font-size: 13.33px;">计算机网络</a> <a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a> <a href="/tags/连载中/" style="font-size: 20px;">连载中</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/17/Java-从入门到懵逼/">Java常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/08/Hexo使用教程/">Hexo使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/06/软件测试与维护/">软件测试与维护</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/实验4-虚拟专用网与反向代理技术/">实验4-虚拟专用网与反向代理技术</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/21/实验3-数字证书及其应用/">实验3 数字证书及其应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 汪博全<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

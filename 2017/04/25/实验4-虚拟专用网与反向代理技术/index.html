@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>实验4-虚拟专用网与反向代理技术 | 汪博全的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="已完结">
+<meta name="keywords" content="已完结,信息安全,数字证书">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实验4-虚拟专用网与反向代理技术">
+<meta property="og:url" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/index.html">
+<meta property="og:site_name" content="汪博全的博客">
+<meta property="og:description" content="已完结">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/1.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/2.tiff">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/2.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/3.tiff">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/3.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/4.tiff">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/4.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/6.tiff">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/6.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/7.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/8.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/9.tiff">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/9.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/10.tiff">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/10.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/11.tiff">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/11.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/12.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/12.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/13.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/13.png">
+<meta property="og:updated_time" content="2019-09-17T06:17:18.495Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实验4-虚拟专用网与反向代理技术">
+<meta name="twitter:description" content="已完结">
+<meta name="twitter:image" content="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="汪博全的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">汪博全的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wangbq96.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-实验4-虚拟专用网与反向代理技术" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/25/实验4-虚拟专用网与反向代理技术/" class="article-date">
+  <time datetime="2017-04-25T11:46:00.000Z" itemprop="datePublished">2017-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/信息安全/">信息安全</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      实验4-虚拟专用网与反向代理技术
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>已完结</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1 准备工作"></a>1 准备工作</h1><p>安装openvpn和easy-rsa</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#yum install openvpn easy-rsa</span></span><br></pre></td></tr></table></figure>
+<p>将相关文件复制到 OpenVPN 的配置目录:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cp -R /usr/share/easy-rsa/ /etc/openvpn</span></span><br></pre></td></tr></table></figure>
+<p>现在有关的文件都在<code>/etc/openvpn/easy-rsa/2.0/</code>这个目录中</p>
+<p>修改vars</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim /etc/openvpn/easy-rsa/2.0/vars</span></span><br></pre></td></tr></table></figure>
+<p>将以下这些值修改成你自己的值:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> KEY_COUNTRY=<span class="string">"CN"</span></span><br><span class="line"><span class="built_in">export</span> KEY_PROVINCE=<span class="string">"Guangdong"</span></span><br><span class="line"><span class="built_in">export</span> KEY_CITY=<span class="string">"Guangzhou"</span></span><br><span class="line"><span class="built_in">export</span> KEY_ORG=<span class="string">"YZZN"</span></span><br><span class="line"><span class="built_in">export</span> KEY_EMAIL=<span class="string">"info@i-mec.com"</span></span><br><span class="line"><span class="built_in">export</span> KEY_CN=droplet.example.com</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> KEY_SIZE=2048   <span class="comment">#默认密钥长度为 1024,建议为 2048</span></span><br><span class="line"><span class="built_in">export</span> CA_EXPIRE=3650  <span class="comment">#默认 CA 证书和私钥有效期为 3650 天</span></span><br><span class="line"><span class="built_in">export</span> KEY_EXPIRE=3650 <span class="comment">#默认服务器/客户端证书和私钥有效期为 3650 天</span></span><br></pre></td></tr></table></figure>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/1.png">
+<p>修改完成后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cd /etc/openvpn/easy-rsa/2.0</span></span><br><span class="line"><span class="comment">#source ./vars</span></span><br><span class="line"><span class="comment">#./clean-all</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/2.tiff" alt="pic-1"></p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/2.png">
+<h1 id="2-生成证书"><a href="#2-生成证书" class="headerlink" title="2 生成证书"></a>2 生成证书</h1><h2 id="2-1-构建-CA-私钥和自签发证书"><a href="#2-1-构建-CA-私钥和自签发证书" class="headerlink" title="2.1 构建 CA 私钥和自签发证书"></a>2.1 构建 CA 私钥和自签发证书</h2><p>执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ./build-ca</span></span><br></pre></td></tr></table></figure>
+<p>CN字段填CA其他默认</p>
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/3.tiff" alt="pic-1"></p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/3.png">
+<h2 id="2-2-签发服务器证书和私钥"><a href="#2-2-签发服务器证书和私钥" class="headerlink" title="2.2 签发服务器证书和私钥"></a>2.2 签发服务器证书和私钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ./build-key-server server</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/4.tiff" alt="pic-1"></p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/4.png">
+<h2 id="2-3-生成-SSL-协议所需的-Diffie-Hellman-key-exchange-参数"><a href="#2-3-生成-SSL-协议所需的-Diffie-Hellman-key-exchange-参数" class="headerlink" title="2.3 生成 SSL 协议所需的 Diffie Hellman key exchange 参数"></a>2.3 生成 SSL 协议所需的 Diffie Hellman key exchange 参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ./build-db</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-4-生成客户端证书和密钥"><a href="#2-4-生成客户端证书和密钥" class="headerlink" title="2.4 生成客户端证书和密钥"></a>2.4 生成客户端证书和密钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ./build-key client</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/6.tiff" alt="pic-1"></p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/6.png">
+<h2 id="2-4-生成ta-key文件（防DDos攻击、UDP淹没等恶意攻击）"><a href="#2-4-生成ta-key文件（防DDos攻击、UDP淹没等恶意攻击）" class="headerlink" title="2.4 生成ta.key文件（防DDos攻击、UDP淹没等恶意攻击）"></a>2.4 生成ta.key文件（防DDos攻击、UDP淹没等恶意攻击）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># openvpn --genkey --secret keys/ta.key</span></span><br></pre></td></tr></table></figure>
+<p>至此在<code>keys</code>文件夹下生成了所有我们需要的文件</p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/7.png">
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/8.png">
+<h1 id="3-配置openvpn服务器"><a href="#3-配置openvpn服务器" class="headerlink" title="3 配置openvpn服务器"></a>3 配置openvpn服务器</h1><p>把配置文件模板复制到openvpn配置目录下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cp /usr/share/doc/openvpn-2.4.1/sample/sample-config-files/server.conf /etc/openvpn</span></span><br></pre></td></tr></table></figure>
+<p>编辑server.conf，修改为以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">port 1194</span><br><span class="line">proto udp</span><br><span class="line">dev tun</span><br><span class="line"></span><br><span class="line">ca /etc/openvpn/easy-rsa/2.0/keys/ca.crt</span><br><span class="line">cert /etc/openvpn/easy-rsa/2.0/keys/server.crt</span><br><span class="line">key /etc/openvpn/easy-rsa/2.0/keys/server.key</span><br><span class="line">dh /etc/openvpn/easy-rsa/2.0/keys/dh2048.pem</span><br><span class="line"></span><br><span class="line">server 10.8.0.0 255.255.255.0</span><br><span class="line"></span><br><span class="line">ifconfig-pool-persist ipp.txt</span><br><span class="line"></span><br><span class="line"># 可以让客户端之间相互访问直接通过openvpn程序转发，根据需要设置</span><br><span class="line">client-to-client</span><br><span class="line"># 如果客户端都使用相同的证书和密钥连接VPN，一定要打开这个选项，否则每个证书只允许一个人连接VPN</span><br><span class="line">duplicate-cn</span><br><span class="line"></span><br><span class="line">keepalive 10 120</span><br><span class="line"></span><br><span class="line">tls-auth /etc/openvpn/easy-rsa/2.0/keys/ta.key 0</span><br><span class="line"></span><br><span class="line">cipher AES-256-CBC</span><br><span class="line">comp-lzo</span><br><span class="line">persist-key</span><br><span class="line">persist-tun</span><br><span class="line">status openvpn-status.log</span><br><span class="line">verb 3</span><br><span class="line">explicit-exit-notify 1</span><br></pre></td></tr></table></figure>
+<p>2.4 配置内核和防火墙，启动服务</p>
+<p>（1）执行以下命令开启路由转发功能<br>sed -i ‘/net.ipv4.ip_forward/s/0/1/‘ /etc/sysctl.conf<br>sysctl -p</p>
+<p>（2）执行以下命令配置防火墙<br>iptables -I INPUT -p tcp –dport 1194 -m comment –comment “openvpn” -j ACCEPT<br>iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -j MASQUERADE<br>service iptables save</p>
+<p>（3）执行以下命令启动openvpn并设置为开机启动<br>service openvpn start<br>chkconfig openvpn on</p>
+<h1 id="4-客户端配置"><a href="#4-客户端配置" class="headerlink" title="4 客户端配置"></a>4 客户端配置</h1><p>从<code>/etc/openvpn/easy-rsa/2.0/keys</code>中下载以下文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ca.crt</span><br><span class="line">client.crt</span><br><span class="line">client.key</span><br><span class="line">ta.key</span><br></pre></td></tr></table></figure>
+<p>从openvpn的配置模板文件夹<code>/usr/share/doc/openvpn-2.4.1/sample/sample-config-files/</code>中下载客户端配置文件client.conf</p>
+<p>修改client.conf为以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">client</span><br><span class="line">dev tun</span><br><span class="line">proto udp</span><br><span class="line">remote 119.29.245.107 1194</span><br><span class="line">resolv-retry infinite</span><br><span class="line">nobind</span><br><span class="line">persist-key</span><br><span class="line">persist-tun</span><br><span class="line">ca ca.crt</span><br><span class="line">cert client.crt</span><br><span class="line">key client.key</span><br><span class="line">remote-cert-tls server</span><br><span class="line">tls-auth ta.key 1</span><br><span class="line">cipher AES-256-CBC</span><br><span class="line">comp-lzo</span><br><span class="line">verb 3</span><br></pre></td></tr></table></figure>
+<p>重命名为client.ovpn</p>
+<p>下载mac平台下openvpn的客户端Tunnelblick，安装后打开client.ovpn，客户端会自动加载配置，点击连接client，客户端控制台显示成功连接到openvpn服务器，同时可以看到本机的vlan地址是10.8.0.6</p>
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/9.tiff" alt="pic-1"></p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/9.png">
+<p>可以ping通openvpn服务器</p>
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/10.tiff" alt="pic-1"></p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/10.png">
+<p>查看openvpn服务器的日志文件，可以看到客户端连接的记录</p>
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/11.tiff" alt="pic-1"></p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/11.png">
+<p>2 反向代理</p>
+<p>在openvpn上安装nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
+<p>3、配置nginx<br>进入/etc/nginx/conf.d，修改defualt.conf文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name 127.0.0.1;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://10.8.0.6:8080;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在本机上用Tunnelblick连接到openvpn服务器加入到vlan中，然后启动一个web应用</p>
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/12.png" alt="pic-1"></p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/12.png">
+<p>使用另一台处于外网的设备访问openvpn服务器的地址，发现可以访问本机的web应用</p>
+<img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/04/25/实验4-虚拟专用网与反向代理技术/13.png">
+<p><img src="/2017/04/25/实验4-虚拟专用网与反向代理技术/13.png" alt="pic-1"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wangbq96.github.io/2017/04/25/实验4-虚拟专用网与反向代理技术/" data-id="ck7m6rlko0010zsuy4vjgryzl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/信息安全/">信息安全</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/已完结/">已完结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数字证书/">数字证书</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/06/软件测试与维护/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          软件测试与维护
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/21/实验3-数字证书及其应用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">实验3 数字证书及其应用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/信息安全/">信息安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/树莓派/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/">计算机基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据结构与算法/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/计算机网络/">计算机网络</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件设计/">软件设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件配置/">软件配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/项目/">项目</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dokuwiki/">dokuwiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/已完结/">已完结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数字证书/">数字证书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连载中/">连载中</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/dokuwiki/" style="font-size: 10px;">dokuwiki</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/信息安全/" style="font-size: 13.33px;">信息安全</a> <a href="/tags/已完结/" style="font-size: 20px;">已完结</a> <a href="/tags/数字证书/" style="font-size: 13.33px;">数字证书</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/计算机网络/" style="font-size: 13.33px;">计算机网络</a> <a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a> <a href="/tags/连载中/" style="font-size: 20px;">连载中</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/17/Java-从入门到懵逼/">Java常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/08/Hexo使用教程/">Hexo使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/06/软件测试与维护/">软件测试与维护</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/实验4-虚拟专用网与反向代理技术/">实验4-虚拟专用网与反向代理技术</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/21/实验3-数字证书及其应用/">实验3 数字证书及其应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 汪博全<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

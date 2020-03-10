@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>计算机网络-网络层 | 汪博全的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="连载中">
+<meta name="keywords" content="连载中,计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-网络层">
+<meta property="og:url" content="https://wangbq96.github.io/2017/03/26/计算机网络-网络层/index.html">
+<meta property="og:site_name" content="汪博全的博客">
+<meta property="og:description" content="连载中">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-17T06:17:18.587Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络-网络层">
+<meta name="twitter:description" content="连载中">
+  
+    <link rel="alternate" href="/atom.xml" title="汪博全的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">汪博全的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wangbq96.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-计算机网络-网络层" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/26/计算机网络-网络层/" class="article-date">
+  <time datetime="2017-03-26T09:00:00.000Z" itemprop="datePublished">2017-03-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/计算机基础/">计算机基础</a>►<a class="article-category-link" href="/categories/技术/计算机基础/计算机网络/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机网络-网络层
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>连载中</p>
+</blockquote>
+<a id="more"></a>
+<p>网络层功能</p>
+<ul>
+<li>转发：当一个分组到达路由器的一条输入链路时，路由器必须将该分组移动到适当的输出链路</li>
+<li>路由选择：当分组从发送方流向接收方是，网络层必须决定这些分组所采用的路由或路径</li>
+<li>连接建立：</li>
+</ul>
+<p>每台路由器中都有一张<strong>转发表</strong>，路由器通过检查到达分组首部字段的值来转发分组，然后使用该值在该路由器的转发表中索引查询</p>
+<p>路由器：基于网络层字段中的值做转发决定<br>交换机：基于链路层字段中的值做转发决定</p>
+<p>网络服务模型</p>
+<table>
+<thead>
+<tr>
+<th>网络体系结构</th>
+<th>服务模型</th>
+<th>带宽保证</th>
+<th>无丢包保证</th>
+<th>有序</th>
+<th>定时</th>
+<th>拥塞指示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internet</td>
+<td>尽力而为</td>
+<td>无</td>
+<td>无</td>
+<td>任何可能顺序</td>
+<td>不维护</td>
+<td>无</td>
+</tr>
+<tr>
+<td>ATM</td>
+<td>CBR（恒定比特率）</td>
+<td>保证恒定速率</td>
+<td>是</td>
+<td>有序</td>
+<td>维护</td>
+<td>不出现拥塞</td>
+</tr>
+<tr>
+<td>ATM</td>
+<td>ABR（可用比特率）</td>
+<td>保证最小速率</td>
+<td>无</td>
+<td>有序</td>
+<td>不维护</td>
+<td>提供拥塞指示</td>
+</tr>
+</tbody>
+</table>
+<h1 id="虚电路与数据报网络"><a href="#虚电路与数据报网络" class="headerlink" title="虚电路与数据报网络"></a>虚电路与数据报网络</h1><p>虚电路网络：仅在网络层提供连接服务的计算机网络<br>数据报网络：仅在网络层提供无连接服务的计算机网络</p>
+<h1 id="路由器工作原理"><a href="#路由器工作原理" class="headerlink" title="路由器工作原理"></a>路由器工作原理</h1><h1 id="网际协议：因特网中的转发和编址"><a href="#网际协议：因特网中的转发和编址" class="headerlink" title="网际协议：因特网中的转发和编址"></a>网际协议：因特网中的转发和编址</h1><h2 id="IP数据报分片"><a href="#IP数据报分片" class="headerlink" title="IP数据报分片"></a>IP数据报分片</h2><p>MTU：最大传输单元<br>当某条链路收到的IP数据报要大于MTU时需要分片<br>IPv4的设计者将<strong>标识（ID）、标志和片偏移字段</strong>放在IP数据报首部中</p>
+<p>eg：数据报大小=4000B（20B首部+3980数据），MTU=1500B，假定初始ID为777<br>则数据报会被分为3个片<br>| 片 | 字节 | ID | 偏移 | 标志 |<br>| — | — | — | — | — |<br>| 1 | 1480 | 777 | 0（插入的数据开始于0字节） | 1（后面还有） |<br>| 2 | 1480 | 777 | 185（插入的数据开始于8X185 = 1480字节） | 1 |<br>| 3 | 1020（3980-1480-1480） | 370（插入的数据开始于8X370 = 2960字节） | 0（后面没了） |</p>
+<h2 id="IP-v4"><a href="#IP-v4" class="headerlink" title="IP (v4)"></a>IP (v4)</h2><p>子网：互联主机接口和路由器接口的网络</p>
+<p>子网格式 223.1.1.0/24</p>
+<p>/24称为子网掩码，表示32位ip左侧24位定义了子网地址</p>
+<p>任何其他要连接到223.1.1.0/24网络的主机都要求其地址具有223.1.1.xxx的形式</p>
+<p>现在的IP网络使用32位地址，以点分十进制表示，如172.16.0.0。地址格式为：IP地址=网络地址＋主机地址 或 IP地址=主机地址＋子网地址＋主机地址。</p>
+<p>IP地址类型</p>
+<p>最初设计互联网络时，为了便于寻址以及层次化构造网络，每个IP地址包括两个标识码（ID），即网络ID和主机ID。同一个物理网络上的所有主机都使用同一个网络ID，网络上的一个主机（包括网络上工作站，服务器和路由器等）有一个主机ID与其对应。IP地址根据网络ID的不同分为5种类型，A类地址、B类地址、C类地址、D类地址和E类地址。</p>
+<ul>
+<li><p>A类地址：一个A类IP地址由1字节的网络地址和3字节主机地址组成，网络地址的最高位必须是“0”， 地址范围从1.0.0.0 到126.0.0.0。可用的A类网络有126个，每个网络能容纳1亿多个主机。</p>
+</li>
+<li><p>B类地址：一个B类IP地址由2个字节的网络地址和2个字节的主机地址组成，网络地址的最高位必须是“10”，地址范围从128.0.0.0到191.255.255.255。可用的B类网络有16382个，每个网络能容纳6万多个主机 。</p>
+</li>
+<li><p>C类地址：一个C类IP地址由3字节的网络地址和1字节的主机地址组成，网络地址的最高位必须是“110”。范围从192.0.0.0到223.255.255.255。C类网络可达209万余个，每个网络能容纳254个主机。</p>
+</li>
+<li><p>D类地址：D类IP地址第一个字节以“lll0”开始，它是一个专门保留的地址。它并不指向特定的网络，目前这一类地址被用在多点广播（Multicast）中。多点广播地址用来一次寻址一组计算机，它标识共享同一协议的一组计算机。</p>
+</li>
+<li><p>E类地址：以“llll0”开始，为将来使用保留。</p>
+</li>
+</ul>
+<p>全零（“0．0．0．0”）地址对应于当前主机。全“1”的IP地址（“255．255．255．255”）是当前子网的广播地址。</p>
+<p>在IP地址3种主要类型里，各保留了3个区域作为私有地址，其地址范围如下：</p>
+<p>A类地址：10.0.0.0～10.255.255.255</p>
+<p>B类地址：172.16.0.0～172.31.255.255</p>
+<p>C类地址：192.168.0.0～192.168.255.255</p>
+<p>A类地址的第一组数字为1～126。注意，数字0和 127不作为A类地址，数字127保留给内部回送函数，而数字0则表示该地址是本地宿主机，不能传送。</p>
+<p>B类地址的第一组数字为128～191。</p>
+<p>C类地址的第一组数字为192～223。</p>
+<h3 id="动态主机配置协议DHCP"><a href="#动态主机配置协议DHCP" class="headerlink" title="动态主机配置协议DHCP"></a>动态主机配置协议DHCP</h3><p>过程</p>
+<ul>
+<li>DHCP服务器发现：主机在UDP分组向67端口发送<strong>DHCP发现报文</strong>，使用广播目的地址255.255.255.255，本机地址设为0.0.0.0</li>
+<li>DHCP服务器提供：DHCP服务器发现一个DHCP发现报文后，用一个<strong>DHCP提供报文</strong>向客户作出响应，仍然使用IP广播地址255.255.255.255</li>
+<li>DHCP请求：客户选择一个DHCP服务器，提供<strong>DHCP请求报文</strong>，并回显参数</li>
+<li>DHCP ACK：服务器用<strong>DHCP ACK报文</strong>对DHCP请求报文进行响应，证实所要求的参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>DHCP发现</th>
+<th>DHCP提供</th>
+<th>DHCP请求</th>
+<th>DHCP ACK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>0.0.0.0:68</td>
+<td>223.1.2.5:67</td>
+<td>0.0.0.0:68</td>
+<td>223.1.2.5:67</td>
+</tr>
+<tr>
+<td>dest</td>
+<td>255.255.255.255:68</td>
+<td>255.255.255.255:68</td>
+<td>255.255.255.255:67</td>
+<td>255.255.255.255:67</td>
+</tr>
+<tr>
+<td>yiaddr</td>
+<td>0.0.0.0</td>
+<td>223.1.2.4</td>
+<td>223.1.2.4</td>
+<td>223.1.2.4</td>
+</tr>
+<tr>
+<td>transaction ID</td>
+<td>654</td>
+<td>654</td>
+<td>655</td>
+<td>655</td>
+</tr>
+<tr>
+<td>DHCP server</td>
+<td>/</td>
+<td>223.1.2.5</td>
+<td>223.1.2.5</td>
+<td>223.1.2.5</td>
+</tr>
+<tr>
+<td>Lifetime</td>
+<td>/</td>
+<td>3600secs</td>
+<td>3600secs</td>
+<td>3600secs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="网络地址转换（NAT）"><a href="#网络地址转换（NAT）" class="headerlink" title="网络地址转换（NAT）"></a>网络地址转换（NAT）</h3><p>路由器如何知道它应将某个分组转发给哪个内部主机：NAT转换表</p>
+<h3 id="UPnP"><a href="#UPnP" class="headerlink" title="UPnP"></a>UPnP</h3><p>NAT穿越</p>
+<h2 id="因特网控制报文协议"><a href="#因特网控制报文协议" class="headerlink" title="因特网控制报文协议"></a>因特网控制报文协议</h2><p>ping</p>
+<h2 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h2><h1 id="路由选择算法"><a href="#路由选择算法" class="headerlink" title="路由选择算法"></a>路由选择算法</h1><p>默认路由器（第一跳路由器）：主机直接连接的路由器<br>源路由器：源主机的默认路由器<br>目的路由器：目的主机的默认路由器</p>
+<h2 id="路由算法的分类"><a href="#路由算法的分类" class="headerlink" title="路由算法的分类"></a>路由算法的分类</h2><p>按全局式还是分散式：</p>
+<ul>
+<li><p>全局路由选择算法：用完整的、全局性的网络知识计算最短路径，如<strong>链路状态（LS）算法</strong></p>
+</li>
+<li><p>分散式路由选择算法：以迭代、分布式的方式计算出最短路径，如<strong>距离向量（DV）算法</strong></p>
+</li>
+</ul>
+<p>按算法是静态还是动态：</p>
+<ul>
+<li>静态路由选择算法</li>
+<li>动态路由选择算法</li>
+</ul>
+<p>按负载敏感还是负载迟钝：</p>
+<ul>
+<li>负载敏感算法：早期ARPAnet</li>
+<li>负载迟钝算法：RIP、OSPF、BGP</li>
+</ul>
+<h2 id="LS算法"><a href="#LS算法" class="headerlink" title="LS算法"></a>LS算法</h2><h2 id="DV算法"><a href="#DV算法" class="headerlink" title="DV算法"></a>DV算法</h2><h2 id="层次路由选择"><a href="#层次路由选择" class="headerlink" title="层次路由选择"></a>层次路由选择</h2><p>问题：</p>
+<ul>
+<li>规模：随着路由器数目变得十分巨大，LS的开销将高得不可实现</li>
+<li>管理自治：既能自己选择路由选择算法，又能与外部网络连接</li>
+</ul>
+<p>自治系统（AS）：每个AS由一组通常处在相同管理控制下的路由器组成，在相同AS下的路由器运行相同的路由选择算法</p>
+<p>在AS中运行的路由选择算法叫做<strong>自治系统内部路由选择算法</strong></p>
+<p>网关路由器：在一个AS内负责向在本AS之外的目的地转发分组一台或多台路由器</p>
+<p>自治系统间路由选择协议：从相邻AS获取可达性信息和向该AS中所有路由器传达可达性信息</p>
+<p>热土豆路由选项</p>
+<h1 id="因特网中的路由选择"><a href="#因特网中的路由选择" class="headerlink" title="因特网中的路由选择"></a>因特网中的路由选择</h1><h2 id="自治系统内部路由选择算法：RIP"><a href="#自治系统内部路由选择算法：RIP" class="headerlink" title="自治系统内部路由选择算法：RIP"></a>自治系统内部路由选择算法：RIP</h2><p>使用DV算法</p>
+<h2 id="自治系统内部路由选择算法：OSPF"><a href="#自治系统内部路由选择算法：OSPF" class="headerlink" title="自治系统内部路由选择算法：OSPF"></a>自治系统内部路由选择算法：OSPF</h2><h2 id="自治系统间路由选择算法：BGP"><a href="#自治系统间路由选择算法：BGP" class="headerlink" title="自治系统间路由选择算法：BGP"></a>自治系统间路由选择算法：BGP</h2><h1 id="广播和多播路由选择"><a href="#广播和多播路由选择" class="headerlink" title="广播和多播路由选择"></a>广播和多播路由选择</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wangbq96.github.io/2017/03/26/计算机网络-网络层/" data-id="ck7m6rll0001ezsuyg2pzt0qb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/连载中/">连载中</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/28/一些小知识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          一些小知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/19/数据结构与算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据结构与算法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/信息安全/">信息安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/树莓派/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/">计算机基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据结构与算法/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/计算机网络/">计算机网络</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件设计/">软件设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件配置/">软件配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/项目/">项目</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dokuwiki/">dokuwiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/已完结/">已完结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数字证书/">数字证书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连载中/">连载中</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/dokuwiki/" style="font-size: 10px;">dokuwiki</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/信息安全/" style="font-size: 13.33px;">信息安全</a> <a href="/tags/已完结/" style="font-size: 20px;">已完结</a> <a href="/tags/数字证书/" style="font-size: 13.33px;">数字证书</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/计算机网络/" style="font-size: 13.33px;">计算机网络</a> <a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a> <a href="/tags/连载中/" style="font-size: 20px;">连载中</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/17/Java-从入门到懵逼/">Java常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/08/Hexo使用教程/">Hexo使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/06/软件测试与维护/">软件测试与维护</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/实验4-虚拟专用网与反向代理技术/">实验4-虚拟专用网与反向代理技术</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/21/实验3-数字证书及其应用/">实验3 数字证书及其应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 汪博全<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>数据结构与算法 | 汪博全的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="连载中">
+<meta name="keywords" content="连载中,数据结构与算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法">
+<meta property="og:url" content="https://wangbq96.github.io/2017/03/19/数据结构与算法/index.html">
+<meta property="og:site_name" content="汪博全的博客">
+<meta property="og:description" content="连载中">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-17T06:17:18.582Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构与算法">
+<meta name="twitter:description" content="连载中">
+  
+    <link rel="alternate" href="/atom.xml" title="汪博全的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">汪博全的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wangbq96.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据结构与算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/19/数据结构与算法/" class="article-date">
+  <time datetime="2017-03-19T07:41:00.000Z" itemprop="datePublished">2017-03-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/计算机基础/">计算机基础</a>►<a class="article-category-link" href="/categories/技术/计算机基础/数据结构与算法/">数据结构与算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据结构与算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>连载中</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="算法的复杂度"><a href="#算法的复杂度" class="headerlink" title="算法的复杂度"></a>算法的复杂度</h1><p>时间复杂度<br>空间复杂度</p>
+<h1 id="线性表、链表、队列、栈"><a href="#线性表、链表、队列、栈" class="headerlink" title="线性表、链表、队列、栈"></a>线性表、链表、队列、栈</h1><h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>满二叉树：每一个节点要么是叶子节点，要么有两个子节点<br>完全二叉树：从根节点从左到右填充，除了最后一层，每一层都是满的</p>
+<p>非空满二叉树的叶节点数=内部节点数+1</p>
+<p>非空二叉树空子树数=节点数+1</p>
+<h3 id="遍历二叉树"><a href="#遍历二叉树" class="headerlink" title="遍历二叉树"></a>遍历二叉树</h3><p>前序遍历：根-&gt;左子树-&gt;右子树<br>中序遍历：左子树-&gt;根-&gt;右子树<br>后序遍历：左子树-&gt;根-&gt;右子树</p>
+<h3 id="数组实现完全二叉树"><a href="#数组实现完全二叉树" class="headerlink" title="数组实现完全二叉树"></a>数组实现完全二叉树</h3><h3 id="二叉搜索树（BST）"><a href="#二叉搜索树（BST）" class="headerlink" title="二叉搜索树（BST）"></a>二叉搜索树（BST）</h3><p>对于二叉搜索树的任意一个节点K，该节点左子树任意节点的值都小于K，右子树任意节点的值都大于等于K</p>
+<p>BST插入<br>（1）如果root为空，创建节点插入<br>（2）如果值小于root的值，对左子树递归<br>（3）反之对右子树递归</p>
+<p>BST删除<br>（1）如果没有左子节点，返回右子节点<br>（2）如果有两个子节点，对右子树调用函数deletemin，并用函数返回值代替被删除节点</p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>最大/最小堆：任意一个节点的值都大于/小于或等于其任意一个子节点的值</p>
+<p>建堆<br>假设左右子树都已经是堆，且根元素为R<br>（1）R的值大于或等于其他两个子节点，建堆完成<br>（2）否则与子节点中较大的那一个交换</p>
+<h3 id="霍夫曼编码树"><a href="#霍夫曼编码树" class="headerlink" title="霍夫曼编码树"></a>霍夫曼编码树</h3><h1 id="内排序"><a href="#内排序" class="headerlink" title="内排序"></a>内排序</h1><h2 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h2><p>假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，则称这种排序算法是稳定的；否则称为不稳定的。</p>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>（1）将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。<br>（2）从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）<br>（发票按时间排序）</p>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>（1）从后往前比较，若后一个元素比前一个小，则交换，遍历一遍之后，第一个元素为最小值<br>（2）对剩下的数列重复（1）</p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>（1）遍历整个数组，找到最小的数与第一个数交换<br>（2）对剩下的数列重复（1）</p>
+<h2 id="shell排序"><a href="#shell排序" class="headerlink" title="shell排序"></a>shell排序</h2><p>基本思想：把数列变成基本有序的数列，再进行插入排序<br>eg：假设有16个元素<br>第一轮分为8个长度为2的子数列进行排序<br>第二轮分为4个长度为4的子数列进行排序<br>第三轮分为2个长度为8的子数列进行排序<br>最后一轮正常插入排序</p>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>eg：假设有8个元素<br>相邻2个元素排序形成4个有序子数列<br>每2个子数列排序形成2个有序子数列<br>…</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p><strong>找轴值</strong><br>（1）从数列中挑出一个元素，称为 “轴值”（pivot），并移动到数列首位<br><strong>划分</strong><br>（2）重新排序数列，先从最左端开始向后移动下标l，直到找到大于轴值的值，然后从最右端向前移动下标r，直到找到小于于轴值的值，交换两个值<br>（3）继续移动l、r重复（2），直到l、r相遇。此时交换下标为l的值与轴值，数列被划分为轴值两侧的两个子数列<br><strong>递归</strong><br>（4）对轴值两侧的数列分别执行（1）（2）（3），递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了</p>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>（1）建堆<br>（2）不断移除最大值</p>
+<h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><p>（1）以某个基准（例如个位的数字）计算出每个桶中有多少个数<br>（2）分配到一个临时数组，并复制回原数组<br>（3）更新基准（例如十位的数字），重复（1）（2）</p>
+<h2 id="算法复杂度比较"><a href="#算法复杂度比较" class="headerlink" title="算法复杂度比较"></a>算法复杂度比较</h2><table>
+<thead>
+<tr>
+<th>排序方法</th>
+<th>平均时间复杂度</th>
+<th>最好时间复杂度</th>
+<th>最坏时间复杂度</th>
+<th>空间复杂度</th>
+<th>稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入排序</td>
+<td>n2</td>
+<td>n</td>
+<td>n2</td>
+<td>1</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>冒泡排序</td>
+<td>n2</td>
+<td>n</td>
+<td>n2</td>
+<td>1</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>n2</td>
+<td>n2</td>
+<td>n2</td>
+<td>1</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>shell排序</td>
+<td>n1.3</td>
+<td>n</td>
+<td>n2</td>
+<td>1</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>nlogn</td>
+<td>nlogn</td>
+<td>nlogn</td>
+<td>n</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>nlogn</td>
+<td>nlogn</td>
+<td>n2</td>
+<td>nlogn</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>nlogn</td>
+<td>nlogn</td>
+<td>nlogn</td>
+<td>1</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>d(r+n)</td>
+<td>d(n+rd)</td>
+<td>d(r+n)</td>
+<td>rd+n</td>
+<td>稳定</td>
+</tr>
+</tbody>
+</table>
+<p>r：关键字基数 d：长度</p>
+<h1 id="外排序"><a href="#外排序" class="headerlink" title="外排序"></a>外排序</h1><p>置换选择<br>多路归并</p>
+<h1 id="检索"><a href="#检索" class="headerlink" title="检索"></a>检索</h1><p>开散列<br>闭散列</p>
+<h2 id="基于树的索引"><a href="#基于树的索引" class="headerlink" title="基于树的索引"></a>基于树的索引</h2><h3 id="2-3-树"><a href="#2-3-树" class="headerlink" title="2-3 树"></a>2-3 树</h3><p>结构：<br>1、一个节点包含一个或两个关键码<br>2、每个内部节点有两个子节点（一个关键码）或三个子节点（两个关键码）<br>3、所有叶节点都在树结构的同一层、因此树的高度总是平衡的<br>4、左子树中所有节点都小于第一个关键码值，中间子树介于两个关键码值中间（左闭右开），右子树大于第二个关键码</p>
+<p>插入和删除<br><a href="http://blog.csdn.net/sumoyu/article/details/8277220" target="_blank" rel="noopener">2-3树删除和插入操作的小结</a></p>
+<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><p>B+树只在叶节点存储记录，内部节点存储关键码值</p>
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="图遍历"><a href="#图遍历" class="headerlink" title="图遍历"></a>图遍历</h2><p>深度优先遍历DFS 使用栈<br>广度优先遍历BFS 使用队列</p>
+<h2 id="单源最短路径问题"><a href="#单源最短路径问题" class="headerlink" title="单源最短路径问题"></a>单源最短路径问题</h2><p>Dijkstra算法<br>先求出从起点到最接近起点的顶点之间的最短路径，然后求出第近的，以此类推</p>
+<h2 id="最小支撑树"><a href="#最小支撑树" class="headerlink" title="最小支撑树"></a>最小支撑树</h2><h3 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h3><p>扩张子树</p>
+<h3 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h3><p>挑选最小边拼接</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wangbq96.github.io/2017/03/19/数据结构与算法/" data-id="ck7m6rlks0017zsuy8bgjy4ie" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/连载中/">连载中</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/26/计算机网络-网络层/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          计算机网络-网络层
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/15/数据库-从删库到跑路/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据库-从删库到跑路</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/信息安全/">信息安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/树莓派/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/">计算机基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据结构与算法/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/计算机网络/">计算机网络</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件设计/">软件设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件配置/">软件配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/项目/">项目</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dokuwiki/">dokuwiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/已完结/">已完结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数字证书/">数字证书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连载中/">连载中</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/dokuwiki/" style="font-size: 10px;">dokuwiki</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/信息安全/" style="font-size: 13.33px;">信息安全</a> <a href="/tags/已完结/" style="font-size: 20px;">已完结</a> <a href="/tags/数字证书/" style="font-size: 13.33px;">数字证书</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/计算机网络/" style="font-size: 13.33px;">计算机网络</a> <a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a> <a href="/tags/连载中/" style="font-size: 20px;">连载中</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/17/Java-从入门到懵逼/">Java常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/08/Hexo使用教程/">Hexo使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/06/软件测试与维护/">软件测试与维护</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/实验4-虚拟专用网与反向代理技术/">实验4-虚拟专用网与反向代理技术</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/21/实验3-数字证书及其应用/">实验3 数字证书及其应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 汪博全<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>计算机网络-运输层 | 汪博全的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="连载中">
+<meta name="keywords" content="连载中,计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-运输层">
+<meta property="og:url" content="https://wangbq96.github.io/2017/03/11/计算机网络-运输层/index.html">
+<meta property="og:site_name" content="汪博全的博客">
+<meta property="og:description" content="连载中">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangbq96.github.io/2017/03/11/计算机网络-运输层/rdt1.png">
+<meta property="og:image" content="https://wangbq96.github.io/2017/03/11/计算机网络-运输层/tcp_connection.jpg">
+<meta property="og:updated_time" content="2019-09-17T06:17:18.589Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络-运输层">
+<meta name="twitter:description" content="连载中">
+<meta name="twitter:image" content="https://wangbq96.github.io/2017/03/11/计算机网络-运输层/rdt1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="汪博全的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">汪博全的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wangbq96.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-计算机网络-运输层" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/11/计算机网络-运输层/" class="article-date">
+  <time datetime="2017-03-11T03:38:00.000Z" itemprop="datePublished">2017-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/计算机基础/">计算机基础</a>►<a class="article-category-link" href="/categories/技术/计算机基础/计算机网络/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机网络-运输层
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>连载中</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="运输层："><a href="#运输层：" class="headerlink" title="运输层："></a>运输层：</h1><p>多路复用：将运输层报文段中的数据交付到正确的socket<br>多路分解：在源主机从不同的socket中收集数据块，并为每个数据块封装上首部信息从而生成报文段，然后将报文段传递到网路层</p>
+<p>报文段（32）=源端口号（16）+目的端口号（16）+其他部首字段（32）+报文</p>
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>UDP报文段 = 源端口号+目的端口号+长度+检验和+报文</p>
+<p>UDP检验和：对报文段每16bits相加，若有溢出把溢出位加到最后一位（回卷），再取反<br>如果接收方把所有16bits字相加（包括检验和）结果全为1，则没有差错</p>
+<h2 id="可靠传输协议（rdt）"><a href="#可靠传输协议（rdt）" class="headerlink" title="可靠传输协议（rdt）"></a>可靠传输协议（rdt）</h2><h3 id="rdt-1-0"><a href="#rdt-1-0" class="headerlink" title="rdt 1.0"></a>rdt 1.0</h3><p>假设底层信道完全可靠，发送端和接收端只用负责封装数据和拆封数据<br><img src="/2017/03/11/计算机网络-运输层/rdt1.png" alt></p>
+<h3 id="rdt-2-0"><a href="#rdt-2-0" class="headerlink" title="rdt 2.0"></a>rdt 2.0</h3><p>问题：在底层信道中分组中的比特可能受损<br>解决方法：自动重传请求协议（ARQ）<br>具体过程：一开始发送方处于<strong>等待来着上层调用</strong>的状态，当发送方需要发送数据时，会构造一个包含待发送数据和检验和的一个分组，然后发送出去，随后发送方进入<strong>等待ACK（肯定确认）或NAK（否定确认）</strong>的状态。如果发送方收到ACK，则回到一开始的状态，如果收到NAK，则重传分组。<br>接收方收到的数据如果没有受损，则回答ACK，否则回答NAK。<br>由于发送方在收到回应之前不能继续发送数据，所以rdt 2.0这样的协议又被称为<strong>停等协议</strong></p>
+<h3 id="rdt-2-1"><a href="#rdt-2-1" class="headerlink" title="rdt 2.1"></a>rdt 2.1</h3><p>问题：ACK和NAK可能受损<br>解决方法：在数据分组中增加<strong>序号</strong>（sequence number）字段<br>具体过程：<br>发送方<br>状态A：等待上层调用，发送0号分组<br>状态B：等待ACK或NAK，期望收到0号分组<br>状态C：等待上层调用，发送1号分组<br>状态D：等待ACK或NAK，期望收到1号分组<br>A -&gt; B：被调用后，封装编号0，数据，检验和为一个分组，发送出这个分组，进入B状态<br>B -&gt; B：收到了回答但是分组损坏或者收到NAK，重传分组<br>B -&gt; C：收到了ACK且分组没有损坏，进入C状态<br>C -&gt; D：被调用后，封装编号1，数据，检验和为一个分组，发送出这个分组，进入D状态<br>D -&gt; D：收到了回答但是分组损坏或者收到NAK，重传分组<br>D -&gt; A：收到了ACK且分组没有损坏，进入A状态</p>
+<p>接收方：<br>状态A：等待上层调用，期望收到0号分组<br>状态B：等待上层调用，期望收到1号分组<br>A -&gt; B：收到分组且分组没有损坏且序号为0，返回含有ACK和检验和的分组<br>A -&gt; A：收到分组但分组损坏，返回含有NAK和检验和的分组<br>A -&gt; A：收到分组且分组没有损坏，但序号为1，丢弃数据，返回含有ACK和检验和的分组<br>B -&gt; A：收到分组且分组没有损坏且序号为1，返回含有ACK和检验和的分组<br>B -&gt; B：收到分组但分组损坏，返回含有NAK和检验和的分组<br>B -&gt; B：收到分组且分组没有损坏，但序号为0，丢弃数据，返回含有ACK和检验和的分组</p>
+<h3 id="rdt-2-2"><a href="#rdt-2-2" class="headerlink" title="rdt 2.2"></a>rdt 2.2</h3><p>改进rdt 2.1，使用冗余ACK代替NAK，ACK中必须带有编号<br>具体过程：<br>发送方<br>状态A：等待上层调用，发送0号分组<br>状态B：等待ACK 0<br>状态C：等待上层调用，发送1号分组<br>状态D：等待ACK 1<br>A -&gt; B：被调用后，封装编号0，数据，检验和为一个分组，发送出这个分组，进入B状态<br>B -&gt; B：收到了回答，但是分组损坏或者收到ACK 1，重传分组<br>B -&gt; C：收到了ACK 0且分组没有损坏，进入C状态<br>C -&gt; D：被调用后，封装编号1，数据，检验和为一个分组，发送出这个分组，进入D状态<br>D -&gt; D：收到了回答，但是分组损坏或者收到ACK 0，重传分组<br>D -&gt; A：收到了ACK且分组没有损坏，进入A状态</p>
+<p>接收方：<br>状态A：等待上层调用，期望收到0号分组<br>状态B：等待上层调用，期望收到1号分组<br>A -&gt; B：收到分组且分组没有损坏且序号为0，返回含有ACK和检验和的分组<br>A -&gt; A：收到分组且分组没有损坏，但序号为1，丢弃数据，返回含有ACK 1和检验和的分组<br>B -&gt; A：收到分组且分组没有损坏且序号为1，返回含有ACK和检验和的分组<br>B -&gt; B：收到分组且分组没有损坏，但序号为0，丢弃数据，返回含有ACK 0和检验和的分组</p>
+<h3 id="rdt-3-0"><a href="#rdt-3-0" class="headerlink" title="rdt 3.0"></a>rdt 3.0</h3><p>问题：丢包<br>解决方法：倒计数定时器<br>具体过程：<br>发送方<br>状态A：等待上层调用，发送0号分组<br>状态B：等待ACK 0<br>状态C：等待上层调用，发送1号分组<br>状态D：等待ACK 1<br>A -&gt; B：被调用后，封装编号0，数据，检验和为一个分组，发送出这个分组，定时器启动<br>A -&gt; A：收到了分组，无视<br>B -&gt; B：收到了回答，但是分组损坏或者收到ACK 1，继续等待<br>B -&gt; B：时间到，重传分组，定时器重新启动<br>B -&gt; C：收到了ACK 0且分组没有损坏，定时器停止，进入C状态<br>C -&gt; D：被调用后，封装编号1，数据，检验和为一个分组，发送出这个分组，进入D状态<br>C -&gt; C：收到了分组，无视<br>D -&gt; D：收到了回答，但是分组损坏或者收到ACK 0，继续等待<br>D -&gt; D：时间到，重传分组，定时器重新启动<br>D -&gt; A：收到了ACK且分组没有损坏，定时器停止，进入A状态</p>
+<p>接收方：同rdt 2.2</p>
+<h3 id="流水线rdt"><a href="#流水线rdt" class="headerlink" title="流水线rdt"></a>流水线rdt</h3><p>问题：rdt 3.0存在性能问题，利用率过低，原因在于它是个等停协议<br>解决方法：不使用等停协议，允许发送方发送多个分组而无需等待确认<br>带来的影响：</p>
+<ul>
+<li>必须增加序号范围</li>
+<li>协议的发送方和接收方必须缓存多个分组</li>
+<li>如何处理丢失、损坏及延时过大的分组</li>
+</ul>
+<p>解决流水线的差错恢复有两种方法：<strong>退回N步（GBN）</strong>和<strong>选择重传（SR）</strong></p>
+<h4 id="GBN"><a href="#GBN" class="headerlink" title="GBN"></a>GBN</h4><p>GBN允许发送方发送多个分组而不需要等待确认，但它受限于在流水线中未确认的分组数不能超过某个最大允许数N</p>
+<p>GBN又被称为<strong>滑动窗口协议</strong></p>
+<p>基数号（base）：最早未确认分组的序号<br>下一个序号（nextseqnum）：最小未使用序号（即下一个待发送的序号）<br>N：窗口长度</p>
+<p>[0, base-1]：已经发送并确认<br>[base, nextseqnum-1]：已经发送未确认<br>[nextseqnum, base+N-1]：即将发送<br>[base+N-1, ∞)：不能使用</p>
+<p>序号范围[0, 2^k - 1]（rdt3.0中为[0,1]）</p>
+<p>所有序号必须使用模2^k运算以保证在范围之内</p>
+<p>具体过程：<br>发送方</p>
+<ul>
+<li><strong>有上层调用时</strong>：如果nextseqnum&lt;base+N，即窗口未满，则产生一个分组并发送，然后更新相应变量；否则将数据返回上层，暗示上层窗口已满。</li>
+<li><strong>收到一个ACK</strong>：在GBN中，对序号为n的分组的确认采用<strong>累积确认</strong>的方式，表明接收方已正确收到序号为n的以前且包括n在内的所有分组</li>
+<li><strong>超时</strong>：重传所有已发送但未确认的分组</li>
+</ul>
+<p>接收方</p>
+<ul>
+<li>如果一个序号为n的分组被正确接收到，并且按序，则接收方为分组n发送一个ACK</li>
+<li>其他情况下，丢弃该分组，并为最近按序接收的分组重新发送ACK</li>
+</ul>
+<h4 id="SR"><a href="#SR" class="headerlink" title="SR"></a>SR</h4><p>问题：可能发生大量分组重传而导致性能问题<br>解决方法：仅重传那些它怀疑在接收方出错的分组<br>具体过程：<br>发送方</p>
+<ul>
+<li><strong>有上层调用时</strong>：如果nextseqnum&lt;base+N，即窗口未满，则产生一个分组并发送，然后更新相应变量；否则将数据返回上层，暗示上层窗口已满。</li>
+<li><strong>收到一个ACK</strong>：如果分组序号在窗口内，则将那个被确认的分组标记为已接收。如果该分组的序号等于send_base，则窗口基序号向前移动到第一个未确认分组处。如果窗口移动了且有序号落在窗口内未发送，则发送这些分组</li>
+<li><strong>超时</strong>：由于每个分组都有自己的定时器，所以只重传超时的分组</li>
+</ul>
+<p>接收方</p>
+<ul>
+<li>序号在[rcv_base, rcv_base+N-1]内的分组被正确接收在此情况下，收到的分组落在接收方的窗口内，返回ACK。如果该分组以前没有收到，则缓存该分组；如果该分组的序号等于接收窗口的基序号（rcv_base），则该分组以及之前缓存的序号连续的分组交付给上层。</li>
+<li>序号在[rcv_base-N, rcv_base-1]内分组被正确收到，即使是接收方以前已确认的分组，也必须产生一个ACK</li>
+<li>其他情况下，丢弃该分组</li>
+</ul>
+<h2 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h2><p>拥塞代价</p>
+<ol>
+<li>分组到达速率接近链路容量时，排队延时巨大</li>
+<li>发送方必须重传以补偿因为缓存溢出而丢弃的分组</li>
+<li>发送方在遇到大延时时所进行的不必要重传会引起路由器利用其链路带宽来转发不必要的分组副本</li>
+<li>当一个分组沿一条路径被丢弃时，每个上游路由器用于转发该分组到丢弃该分组而使用的传输容量最终被浪费了</li>
+</ol>
+<p>方法</p>
+<ol>
+<li>端到端拥塞控制</li>
+<li>网络辅助拥塞控制</li>
+</ol>
+<p>网络辅助拥塞控制例子：ATM ABR拥塞控制</p>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><pre><code>![](计算机网络-运输层/tcp_header.jpg)
+</code></pre><p>（计算机网络第6版 图3-29）<br>32bit序号（seq）和32bit确认号（ack）：实现<strong>可靠数据传输服务</strong><br>16bit接收窗口字段：用于<strong>流量控制</strong><br>4bit数据偏移（部首长度）：指示以32bit的字为单位的TCP部首长度<br>6bit标志位字段：URG+ACK+PSH+RST+SYN+FIN</p>
+<p>ACK：acknowledgement TCP协议规定，只有ACK=1时有效，也规定连接建立后所有发送报文的ACK必须为1<br>SYN：synchronization 在连接建立时用来同步序号。当SYN=1而ACK=0时，表明这是一个连接请求报文。对方若同意建立连接，则应在响应报文中使SYN=1和ACK=1. 因此,  SYN置1就表示这是一个连接请求或连接接受报文。<br>FIN：final 用来释放一个连接。当FIN=1时，表明此报文段的发送方的数据已经发送完毕，并要求释放连接。<br>RST：<br>PSH：该位被设置时，接收方应立即将数据交给上层<br>URG：存在紧急数据</p>
+<p>主机A填充进报文段的确认号是主机A<strong>期望</strong>从主机B收到的下一字节的序号</p>
+<p>TCP提供<strong>累积确认</strong></p>
+<h3 id="TCP的可靠数据传输"><a href="#TCP的可靠数据传输" class="headerlink" title="TCP的可靠数据传输"></a>TCP的可靠数据传输</h3><p>TCP发送方的3个与发送和重传有关的事件：从上层应用程序接收数据、定时器超时和收到ACK</p>
+<p>每次TCP重传时都会将下次的超时间隔设为先前值的两倍</p>
+<p>快速重传：发送方一旦收到3个冗余ACK，就执行快速重传，即在该报文段的定时器过期之前重传丢失的报文段<br>选择确认：允许TCP接收方有选择的确认失序报文段</p>
+<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>TCP通过让发送方维护一个称为<strong>接收窗口</strong>的变量来提供流量控制</p>
+<h3 id="TCP连接管理：三次握手和四次挥手"><a href="#TCP连接管理：三次握手和四次挥手" class="headerlink" title="TCP连接管理：三次握手和四次挥手"></a>TCP连接管理：三次握手和四次挥手</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><ol>
+<li>首先由Client发出一个特殊的TCP报文段，该报文段SYN=1, ACK=0, seq=client_isn（client_isn由客户端随机生成），且不携带数据。该报文段被称为SYN报文段</li>
+<li>Server接收到SYN报文段并分配资源后，向客户端发送允许连接的报文段。该报文段SYN=1, ACK=1, seq=server_isn, ack=client_isn+1（server_isn由服务端随机生成），且不携带数据。该报文段被称为SYNACK报文段</li>
+<li>Client接收到SYNACK报文段并分配资源后，向Server发送另外一个报文段，确认服务器允许连接，该报文段SYN=0, seq=client_isn+1, ack=server_isn+1，因为连接已经建立，所以SYN置为0，在该报文段中可以携带数据。</li>
+</ol>
+<p>一旦完成这三个步骤，Client和Server就可以进行数据交换了，此后每一个报文段中SYN都要置为0</p>
+<p>形象的描述三次握手：<br>C:“喂，你听得到吗？”             C发送SYN<br>S:“我听得到呀，你听得到我吗？”     S发送SYN ACK<br>C:“我能听到你，今天balabala…”  C发送ACK并传输数据</p>
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><ol>
+<li>Client打算关闭连接，发送了一个特殊的报文段，该报文段中FIN=1</li>
+<li>Server接收到该报文段后，向Client发送确认报文段ACK=1（该报文段仍包含数据）</li>
+<li>Server随后发送自己的终止报文段（FIN=1）</li>
+<li>Client收到后发送确认报文段，连接终止</li>
+</ol>
+<p>形象的描述四次挥手：<br>C:“喂，我不说了。”                             C发送FIN<br>S:“我知道了。等下，上一句还没说完。Balabala…”   S发送ACK<br>S:”好了，说完了，我也不说了。”                   S发送FIN<br>C:”我知道了”                                  C发送ACK</p>
+<p>C等待2MSL，保证S收到了消息，否则重传ACK</p>
+<p><img src="/2017/03/11/计算机网络-运输层/tcp_connection.jpg" alt></p>
+<p>为什么连接的时候是三次握手，关闭的时候却是四次握手？<br>答：因为当Server端收到Client端的SYN连接请求报文后，可以直接发送SYN+ACK报文。其中ACK报文是用来应答的，SYN报文是用来同步的。但是关闭连接时，当Server端收到FIN报文时，很可能并不会立即关闭SOCKET，所以只能先回复一个ACK报文，告诉Client端，”你发的FIN报文我收到了”。只有等到我Server端所有的报文都发送完了，我才能发送FIN报文，因此不能一起发送。故需要四步握手。</p>
+<p>为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？<br>答：虽然按道理，四个报文都发送完毕，我们可以直接进入CLOSE状态了，但是我们必须假象网络是不可靠的，有可以最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文。</p>
+<h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><p>TCP必须使用<strong>端到端拥塞控制</strong>而不是使用网络辅助拥塞控制，因为IP层不向端系统提供显式的网络拥塞反馈</p>
+<p>方法：让每个TCP发送方根据感知到的网络拥塞程度来限制其发送速率。如果没什么拥塞，则加快速率；反之降低速率。</p>
+<p>问题：如何限制速率；如何感知拥塞；如何改变速率</p>
+<p>1、如何限制速率<br>TCP拥塞控制机制跟踪一个变量：拥塞窗口（cwnd）<br>在一个发送方中未确认的数据量不会超过cwnd与rwnd中的最小值<br>在理想情况下，发送方的发送速率大概是cwnd/RTT(Byte/s)，通过调节cwnd的值可以控制速率</p>
+<p>2、如何感知拥塞<br>定义丢包事件：超时或收到3个ACK<br>发生丢包事件时，发送方就认为发生了拥塞3</p>
+<p>3、如何改变速率</p>
+<ul>
+<li>一个丢失的报文段意味着拥塞，因此当丢失报文段时应该降低TCP发送方的速率</li>
+<li>当对先前未确认报文段的确认到达时，能够增加发送方的速率</li>
+<li>带宽探测</li>
+</ul>
+<h4 id="TCP拥塞算法"><a href="#TCP拥塞算法" class="headerlink" title="TCP拥塞算法"></a>TCP拥塞算法</h4><ol>
+<li>慢启动<br>在慢启动状态下，cwnd的值以一个MSS开始，并每当传输的报文段首次被确认就增加一个MSS。因此，TCP发送速率起始慢，但在慢启动阶段以指数增长。</li>
+</ol>
+<p>何时停止：<br>（1）如果存在由超时引起的丢包事件，将ssthresh设置为cwnd/2，然后将cwnd设为1MSS并重新慢启动<br>（2）当cwnd=ssthresh时，结束慢启动进入拥塞避免模式<br>（3）当收到3个ACK时，进入快速恢复模式</p>
+<ol start="2">
+<li>拥塞避免<br>每个RTT只将cwnd增加一个MSS</li>
+</ol>
+<p>何时停止：<br>（1）如果存在由超时引起的丢包事件，将ssthresh设置为cwnd/2，然后将cwnd设为1MSS并重新慢启动<br>（2）当收到3个ACK时，将ssthresh设为cwnd/2，进入快速恢复模式</p>
+<ol start="3">
+<li>快速恢复<br>对于引起TCP进入快速恢复模式的缺失报文段，对收到的每一个冗余ACK，cwnd的值增加一个MSS。最终当对丢失报文段的一个ACK到达时，TCP在降低cwnd后进入拥塞避免状态</li>
+</ol>
+<p>何时停止：<br>（1）如果存超时，将ssthresh设置为cwnd/2，然后将cwnd设为1MSS并重新慢启动<br>（2）如果存在丢包，将ssthresh设为cwnd/2，cwnd设置为1MSS</p>
+<h3 id="TCP有关变量"><a href="#TCP有关变量" class="headerlink" title="TCP有关变量"></a>TCP有关变量</h3><p>LastByteRead<br>LastByteSent<br>LastByteAcked<br>rwnd</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wangbq96.github.io/2017/03/11/计算机网络-运输层/" data-id="ck7m6rll4001lzsuykvfr7ax3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/连载中/">连载中</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/13/《Thinking-in-Java》学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          《Thinking in Java》学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/09/APP用户认证系统的设计/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">APP用户认证系统的设计</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/信息安全/">信息安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/树莓派/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/">计算机基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/数据结构与算法/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/计算机基础/计算机网络/">计算机网络</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件设计/">软件设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件配置/">软件配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/项目/">项目</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dokuwiki/">dokuwiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/已完结/">已完结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数字证书/">数字证书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连载中/">连载中</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/dokuwiki/" style="font-size: 10px;">dokuwiki</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/信息安全/" style="font-size: 13.33px;">信息安全</a> <a href="/tags/已完结/" style="font-size: 20px;">已完结</a> <a href="/tags/数字证书/" style="font-size: 13.33px;">数字证书</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/计算机网络/" style="font-size: 13.33px;">计算机网络</a> <a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a> <a href="/tags/连载中/" style="font-size: 20px;">连载中</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/17/Java-从入门到懵逼/">Java常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/08/Hexo使用教程/">Hexo使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/06/软件测试与维护/">软件测试与维护</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/实验4-虚拟专用网与反向代理技术/">实验4-虚拟专用网与反向代理技术</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/21/实验3-数字证书及其应用/">实验3 数字证书及其应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 汪博全<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
