@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <title>雅思计算器（A类）</title>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h2>雅思计算器（A类）</h2>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">正确个数换算成分数（阅读作文）</div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label for="rightNum" class="col-sm-2 control-label">正确个数: </label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="rightNum" name="rightNum">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button name="calItem" class="btn btn-default" onclick="calItem()">计算</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rightNum" class="col-sm-2 control-label">分数: </label>
+            <div class="col-sm-4">
+              <p class="form-control-static" id="itemScore"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">总分计算</div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label for="speakingScore" class="col-sm-2 control-label">Speaking</label>
+            <div class="col-sm-4">
+              <input type="text" id="speakingScore" name="speakingScore" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="listeningScore" class="col-sm-2 control-label">Listening</label>
+            <div class="col-sm-4">
+              <input type="text" id="listeningScore" name="listeningScore" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="readingScore" class="col-sm-2 control-label">Reading</label>
+            <div class="col-sm-4">
+              <input type="text" id="readingScore" name="readingScore" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="writingScore" class="col-sm-2 control-label">Writing</label>
+            <div class="col-sm-4">
+              <input type="text" id="writingScore" name="writingScore" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button name="calItem" class="btn btn-default" onclick="calTotal()">计算</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rightNum" class="col-sm-2 control-label">分数: </label>
+            <div class="col-sm-4">
+              <p class="form-control-static" id="totalScore"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script type="text/javascript">
+    	function calItem() {
+    		var score;
+    		var num = document.getElementById('rightNum').value;
+    		if (39 <= num && num <= 40) {
+    			score = 9.0;
+    		} else if (37 <= num && num <= 38) {
+    			score = 8.5;
+    		} else if (35 <= num && num <= 36) {
+    			score = 8.0;
+    		} else if (33 <= num && num <= 34) {
+    			score = 7.5;
+    		} else if (30 <= num && num <= 32) {
+    			score = 7.0;
+    		} else if (27 <= num && num <= 29) {
+    			score = 6.5;
+    		} else if (23 <= num && num <= 26) {
+    			score = 6.0;
+    		} else if (20 <= num && num <= 22) {
+    			score = 5.5;
+    		} else if (16 <= num && num <= 19) {
+    			score = 5.0;
+    		} else if (13 <= num && num <= 15) {
+    			score = 4.5;
+    		} else if (10 <= num && num <= 12) {
+    			score = 4.0;
+    		} else if (6 <= num && num <= 9) {
+    			score = 3.5;
+    		} else if (4 <= num && num <= 5) {
+    			score = 3.0;
+    		} else if (3 == num) {
+    			score = 2.5;
+    		} else if (2 == num) {
+    			score = 2.0;
+    		} else if (1 == num) {
+    			score = 1.0;
+    		}
+    		document.getElementById('itemScore').innerHTML = score
+    	}
+
+    	function calTotal(){
+    		var s = parseFloat(document.getElementById('speakingScore').value);
+    		var l = parseFloat(document.getElementById('listeningScore').value);
+    		var r = parseFloat(document.getElementById('readingScore').value);
+    		var w = parseFloat(document.getElementById('writingScore').value);
+    		var totel = (s+l+r+w) / 4;
+    		var i = parseInt(totel);
+    		var j = totel - i;
+    		if (0 < j && j < 0.25) {
+    			j = 0;
+    		} else if (0.25 <= j && j < 0.75) {
+    			j = 0.5
+    		} else if (j >= 0.75) {
+    			j = 1
+    		}
+    		document.getElementById('totalScore').innerHTML = i + j;
+    	}
+    </script>
+</div></body>
+</html>
